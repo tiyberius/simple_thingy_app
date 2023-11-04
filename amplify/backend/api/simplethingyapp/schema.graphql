@@ -9,5 +9,5 @@ type Profile
   id: ID!
   counter_value: Int
   email: String!
-  owner: String! 
+  owner: String! @auth(rules: [{ allow: owner, operations: [read] }, { allow: private, provider: iam }])
 }
