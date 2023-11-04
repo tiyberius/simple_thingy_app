@@ -1,0 +1,13 @@
+type Profile
+  @model
+  @auth(
+    rules: [
+      { allow: private, provider: iam }
+      { allow: owner, operations: [read, update, create] }
+    ]
+  ) {
+  id: ID!
+  counter_value: Int
+  email: String!
+  owner: String! 
+}

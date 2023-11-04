@@ -1,0 +1,25 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "simplethingyappc34eb86e",
+  "functionName": "simplethingyappc34eb86ePostConfirmation",
+  "resourceName": "simplethingyappc34eb86ePostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "/snapshot/repo/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "simplethingyappc34eb86ePostConfirmation",
+  "skipEdit": true,
+  "permissions": {
+    "api": {
+      "simplethingyapp": [
+        "Query",
+        "Mutation",
+        "Subscription"
+      ]
+    }
+  }
+}
