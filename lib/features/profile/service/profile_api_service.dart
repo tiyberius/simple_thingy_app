@@ -27,11 +27,15 @@ class ProfileAPIService {
 
   Future<void> updateProfile(Profile updatedProfile) async {
     try {
-      await Amplify.API
+      var request = ModelMutations.update(updatedProfile);
+      request.variables['input'].remove('owner');
+      var response = await Amplify.API
           .mutate(
-            request: ModelMutations.update(updatedProfile),
+            request: request,
           )
           .response;
+      debugPrint('*** RESPONSE ***');
+      debugPrint(response.toString());
     } on Exception catch (error) {
       debugPrint('updateProfile failed: $error');
     }
